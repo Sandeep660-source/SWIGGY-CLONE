@@ -148,6 +148,20 @@ function Header() {
             >
               Sign Up
             </Button>
+            <Button
+              onClick={() => navigate("/cart")}
+              sx={{
+                backgroundColor: "white",
+                color: "orange",
+                fontWeight: "bold",
+                "&:hover": {
+                  backgroundColor: "#f5f5f5",
+                },
+              }}
+            >Cart</Button>
+    
+              
+        
           </Box>
 
           <Box sx={{ flexGrow: 0 }}>

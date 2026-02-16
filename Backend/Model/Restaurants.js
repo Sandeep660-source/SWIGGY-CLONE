@@ -1,7 +1,7 @@
 const mongoose = require("mongoose");
 const  restaurantsSchema = new mongoose.Schema(
     {
-        restaurantname: {
+        name: {
             type: String,
             required: true,
             trim: true,
@@ -33,9 +33,9 @@ const  restaurantsSchema = new mongoose.Schema(
 
         },
         foodType: {
-      type: String,
-      enum: ["veg", "non-veg"],
-      required: true,
+        type: String,
+        enum: ["veg", "non-veg"],
+         required: true,
     },
 
          

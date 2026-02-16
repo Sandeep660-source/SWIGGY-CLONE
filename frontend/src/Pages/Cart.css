@@ -1,0 +1,123 @@
+.cart-page {
+  max-width: 1000px;
+  margin: auto;
+  padding: 30px 15px;
+  color: white;
+}
+
+.cart-title {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+/* ITEMS */
+
+.cart-items-section {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.cart-item-full {
+  background: white;
+  color: black;
+  border-radius: 14px;
+  padding: 18px;
+  display: flex;
+  justify-content: space-between;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.cart-item-left h5 {
+  margin: 0;
+}
+
+.cart-item-left p {
+  margin: 4px 0;
+  font-size: 16px;
+  color:  light black;
+}
+
+.price {
+  font-weight: 600;
+}
+
+.cart-item-right {
+  text-align: center;
+}
+
+.cart-item-right img {
+  width: 90px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.qty {
+  margin-top: 6px;
+  color: #60b246;
+  font-weight: bold;
+}
+
+/* ADDRESS FULL */
+
+.address-full {
+  background: white;
+  color: #3e4152;
+  border-radius: 14px;
+  padding: 18px;
+  margin-top: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.address-full textarea {
+  width: 98%;
+  padding: 12px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: none;
+}
+
+/* BILL FULL */
+
+.bill-full {
+  background: white;
+  color: #3e4152;
+  border-radius: 14px;
+  padding: 18px;
+  margin-top: 20px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.bill-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 8px 0;
+}
+
+.bill-row.total {
+  font-weight: bold;
+  font-size: 16px;
+}
+
+/* PLACE ORDER */
+
+.place-order-row {
+  margin-top: 40px;
+  text-align: center;
+}
+
+.place-order-btn {
+  width: 100%;
+  background: #60b246;
+  border: none;
+  padding: 14px;
+  border-radius: 10px;
+  font-size: 16px;
+  font-weight: bold;
+  color: white;
+  cursor: pointer;
+}

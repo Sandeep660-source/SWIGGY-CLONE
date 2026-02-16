@@ -1,49 +1,24 @@
 import React from "react";
-import Card from "../Components/Card";
+import { useNavigate } from "react-router-dom";
+import "./Card.css";
 
-const Restaurant = () => {
-  const restaurantList = [
-    {
-      name: "Global Tastes",
-      image: "https://example.com/global-tastes.jpg",
-      address: {
-        street: "45 Food Street",
-        city: "Bangalore",
-        state: "KA",
-        zipcode: "560001"
-      },
-      phone: "9876543210",
-      cuisines: [
-        { name: "Indian", description: "North & South Indian dishes", spiceLevel: "Hot" },
-        { name: "Chinese", description: "Authentic Chinese street food", spiceLevel: "Medium" }
-      ],
-      rating: 4.2
-    },
-    {
-      name: "Pizza Palace",
-      image: "https://example.com/pizza-palace.jpg",
-      address: {
-        street: "12 MG Road",
-        city: "Bangalore",
-        state: "KA",
-        zipcode: "560002"
-      },
-      phone: "9123456789",
-      cuisines: [
-        { name: "Italian", description: "Wood-fired pizzas and pasta", spiceLevel: "Mild" },
-        { name: "Mexican", description: "Tacos, burritos, nachos", spiceLevel: "Medium" }
-      ],
-      rating: 4.7
-    }
-  ];
+const Card = ({ restaurant }) => {
+  const navigate = useNavigate();
 
   return (
-    <div className="card-container">
-      {restaurantList.map((restaurant, index) => (
-        <Card key={index} restaurant={restaurant} />
-      ))}
+    <div
+      className="restaurant-card"
+      onClick={() => navigate(`/restaurant/${restaurant._id}`)}
+    >
+      <img src={restaurant.image} alt={restaurant.name} />
+
+      <div className="restaurant-card-content">
+        <div className="restaurant-name">{restaurant.name}</div>
+        <div className="restaurant-info">⭐ {restaurant.rating}</div>
+        <div className="restaurant-info">{restaurant.cuisine}</div>
+      </div>
     </div>
   );
 };
 
-export default Restaurant;
+export default Card;

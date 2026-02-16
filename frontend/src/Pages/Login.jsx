@@ -3,33 +3,36 @@ import { Link, useNavigate } from "react-router-dom";
 import "./auth.css";              
 import { loginAPI } from "../services/api";  
 import useLogin from "../hooks/useLogin"; 
+import "./Login.css";
 
 
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [Loading, setLoading]=useState(false);
   
-  const { login } = useUser();
+  
 
-  const navigate = useNavigate();
-  const { validateLogin, error, setError, loading, setLoading } = useLogin();
+  const navigate = useNavigate()
 
   const handleSubmit = async (e) => {
     e.preventDefault();
       
       // Validate input fields
-      const isValid = validateLogin(email, password);
-       if(!isValid){
-        return
-       }
+      
       try {
         setLoading(true);
         const userData = {  email, password };
         const data = await loginAPI(userData);
+        console.log("Login successful:", data);
+        if (data.token){
+          localStorage.setItem("token",data.token)
+        }
   
         alert("Login successful!");
-        navigate("/");
+        
+        navigate("/restaurants");
       } catch (err) {
         console.error("Error:", err);
         setError(
@@ -39,22 +42,16 @@ function Login() {
         setLoading(false);
       }
   };
-}
-    
 
-
-const Loginpage = () => {
-
-    const [userName, setuserName]=useState('');
-    const [password, setPassword]=useState('');
 
   return (
     <div>
-        <form>
+        <form id="login-form" onSubmit={handleSubmit}>
+
             <div>
-                <label>Username: </label>
-    
-                <input type="text"  value ={userName} onChange={(e)=>setuserName(e.target.value)} placeholder='Enter Username'/>
+                <label>Email: </label>
+
+                <input type="text"  value ={email} onChange={(e)=>setEmail(e.target.value)} placeholder='Enter Email'/>
             </div>
             <div>
                 <label>Password: </label>
@@ -62,9 +59,11 @@ const Loginpage = () => {
             </div>
             <div>
                 <button type='submit'>Submit</button></div>
+                
+
         </form>
     </div>
   )
 }
 
-export default Loginpage
+export default Login

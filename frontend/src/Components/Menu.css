@@ -1,0 +1,117 @@
+/* GRID LAYOUT */
+
+.menu-grid {
+  max-width: 1100px;
+  margin: auto;
+  padding: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 18px;
+}
+
+/* CARD */
+
+.menu-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 14px;
+  box-shadow: 0 4px 14px rgba(0,0,0,0.08);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* IMAGE */
+
+.menu-card-image-section {
+  position: relative;
+}
+
+.menu-item-img {
+  width: 100%;
+  height: 160px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+/* ADD BUTTON */
+
+.add-btn {
+  position: absolute;
+  bottom: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: white;
+  border: 1px solid #d4d5d9;
+  color: #60b246;
+  font-weight: 700;
+  padding: 6px 22px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+/* DETAILS */
+
+.menu-card-details {
+  margin-top: 18px;
+}
+
+.food-type-icon {
+  width: 14px;
+  height: 14px;
+  border: 1.5px solid green;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 6px;
+}
+
+.food-type-icon span {
+  width: 8px;
+  height: 8px;
+  background: green;
+  border-radius: 50%;
+}
+
+.food-type-icon.non-veg {
+  border-color: red;
+}
+
+.food-type-icon.non-veg span {
+  background: red;
+}
+
+.menu-item-name {
+  font-size: 15px;
+  font-weight: 600;
+  color: #3e4152;
+  margin: 0;
+}
+
+.menu-item-price {
+  font-size: 15px;
+  font-weight: 600;
+  color: #3e4152;
+  margin: 6px 0 2px;
+}
+
+
+.menu-item-desc {
+  font-size: 14px;
+  color: black
+}
+
+.menu-item-category {
+  display: inline-block;
+  background: #f0f0f5;
+  color: #686b78;
+  font-size: 11px;
+  padding: 3px 8px;
+  border-radius: 6px;
+  margin-top: 8px;
+}
+
+
+.menu-grid {
+  padding-bottom: 60px;
+}
